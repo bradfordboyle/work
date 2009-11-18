@@ -1,0 +1,10 @@
+\section{18 November 2009}
+Find the the \ac{PDF} for \ac{PAV} and use it to compute the \ac{CRLB}. We expect that the variance of the \ac{PAV} estimator will match with the lower bound. This raises the question of what is the more general theory of \ac{CRLB} over different \ac{PDF}s. For example, the variance of the sample mean for \ac{MC} is efficient. If we had never seen \ac{AV}, then we would have assumed that we can do no better in our simulations. A key point here is that we are talking about \emph{simulations} here as opposed to \emph{observations} because we are changing the generating \ac{PDF}.
+
+What is the extension of the \ac{CRLB} for functions of parameters. With link success probability, we have an efficient estimator for $\alpha$ but we are interested in $\ln\alpha$. In fact, the error of $\ln\alpha$ is what will affect the ability of topology inference. An important question to answer is: fix a probability threshold for correct topology inference and tell me how many probes I have to send to attain that probability. See propositions 1 \& 2 in \cite{ni-2008b}. I need to read \cite{ni-2008a}. They reference a technical report that I can't seem to locate.
+
+The reason we are looking at \ac{MC} techniques for evaluating system reliability is because direct computation requires enumeration of all paths from source to sink. If the cost of path enumeration is exponential in the number of components, whereas finding a path in a graph is linear (or polynomial) in the number of components then it will be easier for a system with a large number of components to generate several graph realizations and estimate the reliability as the number of graphs with the source and the sink connected over the total number of generated graphs.
+
+In the fields monograph, there is a theorem that shows under certain conditions, \ac{AV} is no worse than \ac{MC}. It would be nice if we could extend this to show that under certain conditions \ac{PAV} does no worse than \ac{MC}.
+
+Finally, understanding how a graph relates to its compliment graph(s) under \ac{AV} and \ac{PAV} is ongoing.
