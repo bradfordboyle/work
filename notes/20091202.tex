@@ -1,0 +1,26 @@
+\section{02 December 2009}
+\paragraph{\acf{PAV}}
+\begin{displaymath}
+\hat{P}_{\alpha,\beta}^{(n)} = \frac{1}{n}\sum_{i=1}^{n/2}\beta(\makebox[0.25in]{\hrulefill} + \makebox[0.25in]{\hrulefill}) +  (1-\beta)(\makebox[0.25in]{\hrulefill} + \makebox[0.25in]{\hrulefill})
+\end{displaymath}
+Must be a convex combination, but in general need not be $\beta$ \& $1-\beta$. $\beta$ will depend on the topology of the graph, but how to know this dependence without knowing all the paths? How do we generate graphs such that $\Ebb[\exists \mbox{a path in} \Gca]=\frac{\alpha}{\beta}~(\mbox{or} \frac{\alpha}{1-\beta})$ without enumerating all the paths? 
+
+\begin{displaymath}
+\Pbb[\exists~\mbox{path in}~\Gca] = \Pbb\left[\bigcup_{l=l_{min}}^{l_{max}}\exists~\mbox{path of length}~l \in \Gca\right]
+\end{displaymath}
+
+\begin{displaymath}
+\Pbb[\exists~\mbox{path of length}~l \in \Gca] = \alpha^l
+\end{displaymath}
+
+If we consider disjoint shortest paths, then we have
+\begin{displaymath}
+\Pbb[\exists~\mbox{path in}~\Gca] \geq k\alpha^{l_{min}}
+\end{displaymath}
+
+\paragraph{Summary}
+\begin{enumerate}
+	\item why \ac{PAV} for more than one link hard
+	\item new understanding of network reliability
+	\item perhaps focus on shortest paths because that is where most of the mass is
+\end{enumerate}

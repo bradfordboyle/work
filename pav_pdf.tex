@@ -1,0 +1,277 @@
+\section{\ac{PAV} \ac{PDF}}
+\begin{align*}
+X &= \Ibb_{U<\alpha}\\
+Y &= \Ibb_{\beta-U < \alpha}\\
+Z &= \Ibb_{\bar{U} < \alpha}\\
+W &= \Ibb_{1-\bar{U}+\beta < \alpha}
+\end{align*}
+
+\[\bar{U} = \frac{1-\beta}{\beta}U + \beta\] 
+
+If we define
+\[T = \frac{\beta(X+Y)+(1-\beta)(Z+W)}{2}\]
+then we can rewrite (\ref{eq:pav_est}) as
+\[\hat{\alpha}_{PAV} = \frac{2}{n} \sum_{i=1}^{n/2}T^{(i)}\]
+The support for $T$ is then $[0,\frac{\beta}{2},\beta,\frac{\beta+1}{2},1]$ and has the following mass function
+\begin{displaymath}
+\Pbb[T=0]=\left\{\begin{array}{rl}
+\frac{\beta-2\alpha}{\beta}, & \alpha < \frac{\beta}{2} \\
+0, &\alpha > \frac{\beta}{2}
+\end{array}\right.
+\end{displaymath}
+
+\begin{displaymath}
+\Pbb[T=\frac{\beta}{2}]=\left\{\begin{array}{rl}
+\frac{2\alpha}{\beta}, & \alpha < \frac{\beta}{2}\\
+\frac{2(\beta-\alpha)}{\beta}, & \frac{\beta}{2} < \alpha < \beta\\
+0, & \alpha > \beta
+\end{array}\right.
+\end{displaymath}
+
+\begin{displaymath}
+\Pbb[T=\beta]=\left\{\begin{array}{rl}
+0, & \alpha < \frac{\beta}{2}\\
+\frac{2\alpha-\beta}{\beta}, & \frac{\beta}{2} < \alpha < \beta\\
+\frac{1+\beta-2\alpha}{1-\beta}, & \beta < \alpha < \frac{\beta+1}{2}\\
+0, & \alpha > \frac{\beta+1}{2}
+\end{array}\right.
+\end{displaymath}
+
+\begin{displaymath}
+\Pbb[T=\frac{\beta+1}{2}]\left\{\begin{array}{rl}
+0, & \alpha < \beta\\
+\frac{2(\alpha-\beta)}{1-\beta}, & \beta < \alpha < \frac{\beta + 1}{2}\\
+\frac{2(1-\alpha)}{1-\beta}, & \alpha > \frac{\beta + 1}{2}
+\end{array}\right.
+\end{displaymath}
+
+\begin{displaymath}
+\Pbb[T=1]=\left\{\begin{array}{rl}
+0, & \alpha < \frac{\beta + 1}{2}\\
+\frac{2\alpha-\beta-1}{1-\beta}, & \alpha > \frac{\beta + 1}{2}
+\end{array}\right.
+\end{displaymath}
+
+\subsection{\ac{PDF} Derivation}
+
+\paragraph{Case I}
+\[X = 0, Y = 0, Z = 0, W = 0\]
+\[\Pbb[\max(\alpha,\frac{\beta(\alpha - \beta)}{1-\beta})< u < min(\beta-\alpha,\frac{\beta(1-\alpha)}{1-\beta})]\]
+\[\Pbb[\alpha < u < \beta - \alpha]\]
+\begin{displaymath}
+\Pbb[\alpha < u < \beta - \alpha]=\left\{\begin{array}{rl}
+0, &\alpha > \frac{\beta}{2}\\
+\frac{\beta-2\alpha}{\beta}, & \alpha < \frac{\beta}{2}
+\end{array}\right.
+\end{displaymath}
+
+\paragraph{Case II}
+\[X = 1, Y = 0, Z = 0, W = 0\]
+\[\Pbb[\frac{\beta(\alpha - \beta)}{1-\beta} < u < min(\alpha,\beta-\alpha,\frac{\beta(1-\alpha)}{1-\beta})]\]
+\[\Pbb[\frac{\beta(\alpha - \beta)}{1-\beta} < u < min(\alpha,\beta-\alpha)]\]
+\begin{displaymath}
+\left\{\begin{array}{rl}
+\Pbb[\frac{\beta(\alpha - \beta)}{1-\beta} < u < \alpha], & \alpha < \frac{\beta}{2}\\
+\Pbb[\frac{\beta(\alpha - \beta)}{1-\beta} < u < \beta-\alpha], & \alpha > \frac{\beta}{2}
+\end{array}\right.
+\end{displaymath}
+
+\begin{displaymath}
+\left\{\begin{array}{rl}
+\Pbb[0 < u < \alpha], & \alpha < \frac{\beta}{2}\\
+\Pbb[0 < u < \beta - \alpha], & \frac{\beta}{2} < \alpha < \beta
+\end{array}\right.
+\end{displaymath}
+
+\begin{displaymath}
+\left\{\begin{array}{rl}
+\frac{\alpha}{\beta}, & \alpha < \frac{\beta}{2}\\
+\frac{\beta-\alpha}{\beta}, & \frac{\beta}{2} < \alpha < \beta\\
+0, & \alpha > \beta
+\end{array}\right.
+\end{displaymath}
+
+
+
+\paragraph{Case III}
+\[X = 0, Y = 1, Z = 0, W = 0\]
+\[\Pbb[\max(\alpha,\frac{\beta(\alpha - \beta)}{1-\beta}, \beta-\alpha)< u < \frac{\beta(1-\alpha)}{1-\beta}]\]
+\[\Pbb[\max(\alpha, \beta-\alpha)< u < \frac{\beta(1-\alpha)}{1-\beta}]\]
+\begin{displaymath}
+\left\{\begin{array}{rl}
+\Pbb[\beta-\alpha < u < \frac{\beta(1-\alpha)}{1-\beta}, & \alpha < \frac{\beta}{2}\\
+\Pbb[\alpha < u < \frac{\beta(1-\alpha)}{1-\beta}, & \alpha > \frac{\beta}{2}
+\end{array}\right.
+\end{displaymath}
+
+\begin{displaymath}
+\left\{\begin{array}{rl}
+F(\frac{\beta(1-\alpha)}{1-\beta}) - F(\beta - \alpha), & \alpha < \frac{\beta}{2}\\
+F(\frac{\beta(1-\alpha)}{1-\beta}) - F(\alpha), & \frac{\beta}{2} < \alpha < \beta\\
+0, & \alpha > \frac{1}{2-\beta}
+\end{array}\right.
+\end{displaymath}
+
+\begin{displaymath}
+\left\{\begin{array}{rl}
+\frac{\alpha}{\beta}, & \alpha < \frac{\beta}{2}\\
+\frac{\beta-\alpha}{\beta}, & \frac{\beta}{2} < \alpha < \beta\\
+0, & \alpha > \beta
+\end{array}\right.
+\end{displaymath}
+
+\paragraph{Case IV}
+\[X = 1, Y = 1, Z = 0, W = 0\]
+\[\Pbb\left[U < \alpha, U > \beta-\alpha, U > \frac{\beta(\alpha-\beta)}{1-\beta}, U < \frac{\beta(1-\alpha)}{1-\beta}\right]\]
+\[\Pbb\left[\max(\beta-\alpha,\frac{\beta(\alpha-\beta)}{1-\beta}) < u < \min\left(\alpha, \frac{\beta(1-\alpha)}{1-\beta}\right)\right]\]
+\begin{displaymath}
+\left\{\begin{array}{rl}
+\Pbb[\beta-\alpha < U < \alpha], & \alpha < \beta\\
+\Pbb\left[\frac{\beta(\alpha-\beta)}{1-\beta} < U < \frac{\beta(1-\alpha)}{1-\beta}\right]\\
+\end{array}\right.
+\end{displaymath}
+
+\begin{displaymath}
+\left\{\begin{array}{rl}
+0, & \alpha < \frac{\beta}{2}\\
+\frac{2\alpha-\beta}{\beta}, & \frac{\beta}{2} < \alpha < \beta\\
+\frac{1+\beta-2\alpha}{1-\beta}, & \beta < \alpha < \frac{\beta+1}{2}\\
+0, & \alpha > \frac{\beta+1}{2}
+\end{array}\right.
+\end{displaymath}
+
+\paragraph{Case V}
+\[X = 0, Y = 0, Z = 1, W = 0\]
+\[\Pbb\left[U > \alpha, U < \beta-\alpha, U < \frac{\beta(\alpha-\beta)}{1-\beta}, U < \frac{\beta(1-\alpha)}{1-\beta}\right]\]
+\[\Pbb\left[\alpha < U < \min\left(\beta-\alpha,\frac{\beta(\alpha-\beta)}{1-\beta}\right)\right]\]
+\[\Pbb[\mbox{Case V}] = 0\]
+
+\paragraph{Case VI}
+\[X = 1, Y = 0, Z = 1, W = 0\]
+\[\Pbb\left[U < \alpha, U < \beta-\alpha, U < \frac{\beta(\alpha-\beta)}{1-\beta}, U < \frac{1-\alpha}{1-\beta}\right]\]
+\[\Pbb[\mbox{Case VI}] = 0\]
+
+\paragraph{Case VII}
+\[X = 0, Y = 1, Z = 1, W = 0\]
+\[\Pbb\left[U > \alpha, U > \beta-\alpha, U < \frac{\beta(\alpha-\beta)}{1-\beta}, U < \frac{\beta(1-\alpha)}{1-\beta}\right]\]
+\[\Pbb[\mbox{Case VII}] = 0\]
+
+\paragraph{Case VIII}
+\[X = 1, Y = 1, Z = 1, W = 0\]
+\[\Pbb\left[U < \alpha, U > \beta-\alpha, U < \frac{\beta(\alpha-\beta)}{1-\beta}, U < \frac{\beta(1-\alpha)}{1-\beta}\right]\]
+\[\Pbb\left[\beta-\alpha < U < \min(\frac{\beta(\alpha-\beta)}{1-\beta},\frac{\beta(1-\alpha)}{1-\beta})\right]\]
+\begin{displaymath}
+\left\{\begin{array}{rl}
+0, & \alpha < \beta\\
+\Pbb\left[0 < U < \frac{\beta(\alpha-\beta)}{1-\beta}\right], & \beta < \alpha < \frac{\beta+1}{2}\\
+\Pbb\left[0 < U < \frac{\beta(1-\alpha)}{1-\beta}\right], & \alpha > \frac{\beta+1}{2}\\
+\end{array}\right.
+\end{displaymath}
+
+\begin{displaymath}
+\left\{\begin{array}{rl}
+0, & \alpha < \beta\\
+\frac{\alpha-\beta}{1-\beta}, & \beta < \alpha < \frac{\beta + 1}{2}\\
+\frac{1-\alpha}{1-\beta}, & \alpha > \frac{\beta + 1}{2}
+\end{array}\right.
+\end{displaymath}
+
+\paragraph{Case IX}
+\[X = 0, Y = 0, Z = 0, W = 1\]
+\[\Pbb\left[U > \alpha, U < \beta-\alpha, U > \frac{\beta(\alpha-\beta)}{1-\beta}, U > \frac{\beta(1-\alpha)}{1-\beta}\right]\]
+\[\Pbb\left[\max\left(\alpha, \frac{\beta(\alpha-\beta)}{1-\beta}, \frac{\beta(1-\alpha)}{1-\beta}\right) < U < \beta-\alpha\right]\]
+\begin{displaymath}
+\left\{\begin{array}{rl}
+\Pbb\left[\frac{\beta(1-\alpha)}{1-\beta} < U < \beta-\alpha\right], & \alpha < \beta\\
+0, & \alpha > \beta
+\end{array}\right.
+\end{displaymath}
+\[\Pbb[\mbox{Case IX}] = 0\]
+
+
+\paragraph{Case X}
+\[X = 1, Y = 0, Z = 0, W = 1\]
+\[\Pbb\left[U < \alpha, U < \beta-\alpha, U > \frac{\beta(\alpha-\beta)}{1-\beta}, U > \frac{\beta(1-\alpha)}{1-\beta}\right]\]
+\[\Pbb\left[\max\left(\frac{\beta(\alpha-\beta)}{1-\beta},\frac{\beta(1-\alpha)}{1-\beta}\right) < u < \min(\alpha,\beta-\alpha)\right]\]
+\begin{displaymath}
+\left\{\begin{array}{rl}
+\Pbb\left[\frac{\beta(1-\alpha)}{1-\beta} < u < \alpha\right], & \alpha < \frac{\beta}{2}\\
+\Pbb\left[\frac{\beta(1-\alpha)}{1-\beta} < u < \beta-\alpha\right], & \frac{\beta}{2} < \alpha < \beta \\
+0, & \alpha > \beta
+\end{array}\right.
+\end{displaymath}
+\[\Pbb[\mbox{Case X}] = 0\]
+
+\paragraph{Case XI}
+\[X = 0, Y = 1, Z = 0, W = 1\]
+\[\Pbb\left[U > \alpha, U > \beta-\alpha, U > \frac{\beta(\alpha-\beta)}{1-\beta}, U > \frac{\beta(1-\alpha)}{1-\beta}\right]\]
+\[\Pbb\left[\max\left(\frac{\beta(\alpha-\beta)}{1-\beta},\frac{\beta(1-\alpha)}{1-\beta},\alpha,\beta-\alpha\right) < U \right]\]
+\[\Pbb\left[\max\left(\frac{\beta(1-\alpha)}{1-\beta},\alpha\right) < U\right]\]
+\begin{displaymath}
+\left\{\begin{array}{rl}
+\Pbb\left[\frac{\beta(1-\alpha)}{1-\beta} < U \right], & \alpha < \beta\\
+\Pbb\left[\alpha < U\right], & \alpha > \beta
+\end{array}\right.
+\end{displaymath}
+\[\Pbb[\mbox{Case XI}] = 0\]
+
+\paragraph{Case XII}
+\[X = 1, Y = 1, Z = 0, W = 1\]
+\[\Pbb\left[U < \alpha, U > \beta-\alpha, U > \frac{\beta(\alpha-\beta)}{1-\beta}, U > \frac{\beta(1-\alpha)}{1-\beta}\right]\]
+\[\Pbb\left[\max\left(\beta-\alpha, \frac{\beta(\alpha-\beta)}{1-\beta}, \frac{\beta(1-\alpha)}{1-\beta}\right) < U < \alpha\right]\]
+\begin{displaymath}
+\left\{\begin{array}{rl}
+\Pbb\left[\frac{\beta(1-\alpha)}{1-\beta} < U < \alpha\right], & \alpha < \frac{\beta + 1}{2}\\
+\Pbb\left[\frac{\beta(\alpha-\beta)}{1-\beta} < U < \alpha\right], & \alpha > \frac{\beta + 1}{2}
+\end{array}\right.
+\end{displaymath}
+
+\begin{displaymath}
+\left\{\begin{array}{rl}
+0, & \alpha < \beta\\
+\frac{\alpha-\beta}{1-\beta}, & \beta < \alpha < \frac{\beta + 1}{2}\\
+\frac{1-\alpha}{1-\beta}, & \alpha > \frac{\beta + 1}{2}
+\end{array}\right.
+\end{displaymath}
+
+\paragraph{Case XIII}
+\[X = 0, Y = 0, Z = 1, W = 1\]
+\[\Pbb\left[U > \alpha, U < \beta-\alpha, U < \frac{\beta(\alpha-\beta)}{1-\beta}, U > \frac{\beta(1-\alpha)}{1-\beta}\right]\]
+\[\Pbb[\mbox{Case XIII}] = 0\]
+
+\paragraph{Case XIV}
+\[X = 1, Y = 0, Z = 1, W = 1\]
+\[\Pbb\left[U < \alpha, U < \beta-\alpha, U < \frac{\beta(\alpha-\beta)}{1-\beta}, U > \frac{\beta(1-\alpha)}{1-\beta}\right]\]
+\[\Pbb[\mbox{Case XIV}] = 0\]
+
+\paragraph{Case XV}
+\[X = 0, Y = 1, Z = 1, W = 1\]
+\[\Pbb\left[U > \alpha, U > \beta-\alpha, U < \frac{\beta(\alpha-\beta)}{1-\beta}, U > \frac{\beta(1-\alpha)}{1-\beta}\right]\]
+\[\Pbb\left[\max\left(\beta-\alpha, \alpha, \frac{\beta(1-\alpha)}{1-\beta}\right) < U < \frac{\beta(\alpha-\beta)}{1-\beta}\right]\]
+\[\Pbb\left[\max\left(\alpha, \frac{\beta(1-\alpha)}{1-\beta}\right) < U < \frac{\beta(\alpha-\beta)}{1-\beta}\right]\]
+\begin{displaymath}
+\left\{\begin{array}{rl}
+\Pbb\left[\frac{\beta(1-\alpha)}{1-\beta} < U < \frac{\beta(\alpha-\beta)}{1-\beta}\right], & \alpha < \beta\\
+\Pbb\left[\alpha < U < \frac{\beta(\alpha-\beta)}{1-\beta}\right], & \alpha > \beta
+\end{array}\right.
+\end{displaymath}
+\[\Pbb[\mbox{Case XV}] = 0\]
+
+\paragraph{Case XVI}
+\[X = 1, Y = 1, Z = 1, W = 1\]
+\[\Pbb\left[U < \alpha, U > \beta-\alpha, U < \frac{\beta(\alpha-\beta)}{1-\beta}, U > \frac{\beta(1-\alpha)}{1-\beta}\right]\]
+\[\Pbb\left[\max\left(\beta-\alpha,\frac{\beta(1-\alpha)}{1-\beta}\right) < U < \min\left(\alpha,\frac{\beta(\alpha-\beta)}{1-\beta}\right)\right]\]
+\[\Pbb\left[\frac{\beta(1-\alpha)}{1-\beta} < u < \frac{\beta(\alpha-\beta)}{1-\beta}\right]\]
+\begin{displaymath}
+\left\{\begin{array}{rl}
+0, & \alpha < \frac{\beta + 1}{2}\\
+F\left(\frac{\beta(\alpha-\beta)}{1-\beta}\right)-F\left(\frac{\beta(1-\alpha)}{1-\beta}\right), & \alpha > \frac{\beta + 1}{2}
+\end{array}\right.
+\end{displaymath}
+
+\begin{displaymath}
+\left\{\begin{array}{rl}
+0, & \alpha < \frac{\beta + 1}{2}\\
+\frac{2\alpha-\beta-1}{1-\beta}, & \alpha > \frac{\beta + 1}{2}
+\end{array}\right.
+\end{displaymath}

@@ -1,0 +1,20 @@
+\section{25 November 2009}
+Work began on finding the \ac{PDF} for the \ac{PAV} case and it quickly became apparent that it was going to be very tedious and error prone. It was suggested that I look into using Mathematica (or similar computer algebra software).
+
+In loss based tomography, I'm interested in estimating $\ln \alpha$, not just $\alpha$. It may be possible to reparameterize the \ac{PDF} in terms of $\ln \alpha$ and obtain a \ac{MVU} estimate from there.
+
+\textbf{SUGGESTED READING} \emph{Information Theory \& Statistics} from \cite{cover-1991}
+
+Let $K_n$ denote the complete graph (every distinct pair of nodes is connected by an edge) on $n$ nodes. A path through the graph is a sequence of nodes. For system reliability, the first and last node in this sequence is the source and sink respectively. The number of paths in $K_n$ is then
+\[\displaystyle\sum_{i=0}^{n-2}k!\]
+I think this is wrong, and should be
+\[\displaystyle\sum_{i=0}^{n-2}\frac{(n-2)!}{(n-2-i)!}\]
+If we introduce the change of variable $j = n - 2 - i$, the above becomes
+\[(n-2)!\displaystyle\sum_{i=0}^{n-2}\frac{1}{i!}\]
+It is shown in \cite{hassani-2004} that
+\[ \displaystyle\sum_{i=0}^{n}\frac{n!}{i!}=\lfloor en! \rfloor\]
+and hence the number of paths in the complete graph $K_n, ( n \geq 2)$ is
+\begin{equation}
+\lfloor e(n-2)! \rfloor
+\end{equation}
+Finding a path from source to sink is of lower complexity. We could make use of Dijkstra's Algorithm to find the shortest path from the source to the sink and it is known that the worst case complexity is $O(n^2)$\cite{kumar-2004}.
